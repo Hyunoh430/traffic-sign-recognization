@@ -20,7 +20,16 @@ All images in this dataset are sourced from the **GTSRB (German Traffic Sign Rec
 ---
 
 ## 🗂 Folder Structure
-cnn_dataset/ ├── 0/ ├── 1/ ├── 2/ ├── 3/ ├── 4/ ├── 5/ ├── 6/ └── 7/
+cnn_dataset/
+├── 0/
+├── 1/
+├── 2/
+├── 3/
+├── 4/
+├── 5/
+├── 6/
+└── 7/
+
 
 
 ---
