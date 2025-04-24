@@ -20,15 +20,24 @@ All images in this dataset are sourced from the **GTSRB (German Traffic Sign Rec
 ---
 
 ## 🗂 Folder Structure
-cnn_dataset/
-├── 0/
-├── 1/
-├── 2/
-├── 3/
-├── 4/
-├── 5/
-├── 6/
-└── 7/
+🗂 Folder Structure
+The dataset is divided into the following folders based on labeled speed categories:
+
+0/: Contains traffic sign images with a 5 km/h speed limit.
+
+1/: Contains traffic sign images with a 15 km/h speed limit.
+
+2/: Contains traffic sign images with a 30 km/h speed limit.
+
+3/: Contains traffic sign images with a 40 km/h speed limit.
+
+4/: Contains traffic sign images with a 50 km/h speed limit.
+
+5/: Contains traffic sign images with a 60 km/h speed limit.
+
+6/: Contains traffic sign images with a 70 km/h speed limit.
+
+7/: Contains traffic sign images with an 80 km/h speed limit.
 
 
 
