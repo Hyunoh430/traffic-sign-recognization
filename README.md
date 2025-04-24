@@ -1,9 +1,3 @@
-
----
-
-## ✅ 최종 프로젝트 구조용 `README.md`
-
-```markdown
 # Speed Sign Detection System (YOLOv5 + CNN + TFLite)
 
 End-to-end speed sign recognition pipeline:
@@ -61,7 +55,6 @@ python train_speed_sign_cnn.py
 
 ### 4. (Optional) Convert to TFLite
 ```python
-# Python snippet
 import tensorflow as tf
 model = tf.keras.models.load_model("speed_sign_model.h5")
 converter = tf.lite.TFLiteConverter.from_keras_model(model)
@@ -92,6 +85,3 @@ pip install torch torchvision opencv-python tensorflow scikit-learn
 
 - `run.py` avoids `detect.py` and gives full control over detection and post-processing
 - CNN model is trained separately using speed sign class folders
-```
-
----
