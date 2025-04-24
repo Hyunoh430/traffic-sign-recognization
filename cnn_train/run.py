@@ -1,44 +1,56 @@
-import torch
-from PIL import Image
-import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-import torchvision.transforms as T
+import cv2
+import tensorflow as tf
+import time  # 시간 측정을 위한 모듈
 
-def inference_and_save(model, input_image_path, output_image_path, threshold=0.3):
-    # 이미지 로드 및 전처리
-    img = Image.open(input_image_path).convert("RGB")
-    img_tensor = T.ToTensor()(img).unsqueeze(0)  # 이미지 텐서로 변환 및 배치 차원 추가
+# TensorFlow Lite 인터프리터 사용
+interpreter = tf.lite.Interpreter(model_path='speed_sign_model.tflite')
 
-    # 모델 추론
-    with torch.no_grad():
-        predictions = model(img_tensor.to(torch.device('cpu')))  # CPU로 모델 실행
-    
-    # 이미지 변환 및 그리기
-    img_np = np.array(img)  # PIL 이미지를 numpy 배열로 변환
-    img_np = cv2.cvtColor(img_np, cv2.COLOR_RGB2BGR)  # OpenCV 형식으로 변환
+# 인터프리터 초기화
+interpreter.allocate_tensors()
 
-    for i, box in enumerate(predictions[0]['boxes']):
-        score = predictions[0]['scores'][i].item()
-        if score > threshold:  # 신뢰도 점수가 임계값 이상인 경우만 표시
-            x1, y1, x2, y2 = map(int, box)
-            label = predictions[0]['labels'][i].item()
-            cv2.rectangle(img_np, (x1, y1), (x2, y2), (0, 255, 0), 2)
-            cv2.putText(img_np, f'Label: {label} Score: {score:.2f}', (x1, y1 - 10),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+# 입력 및 출력 텐서 정보 가져오기
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
 
-    # 결과 이미지 저장
-    cv2.imwrite(output_image_path, img_np)
-    print(f'Result saved at {output_image_path}')
+# 예측할 이미지 경로
+image_path = 'cropped_0.jpg'  # 예측할 이미지 파일의 경로를 입력
 
-# 사용 예시
-input_image_path = 'test_video.mp4'  # 입력 이미지 경로
-output_image_path = 'r.mp4'  # 출력 이미지 저장 경로
+# 이미지 전처리 함수
+def preprocess_image(image_path):
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    img = cv2.resize(img, (128, 128))
+    img = img.astype('float32') / 255.0  # 모델에 맞춰 스케일링
+    img = img.reshape(1, 128, 128, 1)  # 배치 크기 포함하여 4차원으로 변환
+    return img
 
-# 모델 로드
-model_path = '15road_best_model.pt'
-model = torch.load(model_path, map_location=torch.device('cpu'))
-model.eval()
+# 이미지 전처리
+processed_image = preprocess_image(image_path)
 
-# 추론 및 저장
-inference_and_save(model, input_image_path, output_image_path, threshold=0.3)
+# TFLite 모델에 입력 데이터 설정
+interpreter.set_tensor(input_details[0]['index'], processed_image)
+
+# 예측 시작 시간 기록
+start_time = time.time()
+
+# 예측 수행
+interpreter.invoke()
+
+# 예측 종료 시간 기록
+end_time = time.time()
+
+# 예측 결과 가져오기
+output_data = interpreter.get_tensor(output_details[0]['index'])
+
+# 클래스 라벨
+class_labels = ['30', '40', '50', '60', '70', '80', '90']
+
+# 예측 결과 해석
+predicted_class_index = np.argmax(output_data, axis=1)[0]
+predicted_class_label = class_labels[predicted_class_index]
+
+# 걸린 시간 계산
+elapsed_time = end_time - start_time
+
+print(f"The predicted speed limit is: {predicted_class_label}")
+print(f"Time taken for prediction: {elapsed_time:.4f} seconds")
