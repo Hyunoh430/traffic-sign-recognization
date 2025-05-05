@@ -1,0 +1,387 @@
+{
+    "classes": [
+        {
+            "title": "animals",
+            "shape": "rectangle",
+            "color": "#808000",
+            "geometry_config": {},
+            "id": 6479714,
+            "hotkey": ""
+        },
+        {
+            "title": "bend",
+            "shape": "rectangle",
+            "color": "#46F0F0",
+            "geometry_config": {},
+            "id": 6479704,
+            "hotkey": ""
+        },
+        {
+            "title": "bend left",
+            "shape": "rectangle",
+            "color": "#F58230",
+            "geometry_config": {},
+            "id": 6479702,
+            "hotkey": ""
+        },
+        {
+            "title": "bend right",
+            "shape": "rectangle",
+            "color": "#911EB4",
+            "geometry_config": {},
+            "id": 6479703,
+            "hotkey": ""
+        },
+        {
+            "title": "construction",
+            "shape": "rectangle",
+            "color": "#008080",
+            "geometry_config": {},
+            "id": 6479708,
+            "hotkey": ""
+        },
+        {
+            "title": "cycles crossing",
+            "shape": "rectangle",
+            "color": "#800000",
+            "geometry_config": {},
+            "id": 6479712,
+            "hotkey": ""
+        },
+        {
+            "title": "danger",
+            "shape": "rectangle",
+            "color": "#000080",
+            "geometry_config": {},
+            "id": 6479701,
+            "hotkey": ""
+        },
+        {
+            "title": "give way",
+            "shape": "rectangle",
+            "color": "#FFFAC8",
+            "geometry_config": {},
+            "id": 6479696,
+            "hotkey": ""
+        },
+        {
+            "title": "go left",
+            "shape": "rectangle",
+            "color": "#F58230",
+            "geometry_config": {},
+            "id": 6479717,
+            "hotkey": ""
+        },
+        {
+            "title": "go left or straight",
+            "shape": "rectangle",
+            "color": "#F032E6",
+            "geometry_config": {},
+            "id": 6479720,
+            "hotkey": ""
+        },
+        {
+            "title": "go right",
+            "shape": "rectangle",
+            "color": "#000080",
+            "geometry_config": {},
+            "id": 6479716,
+            "hotkey": ""
+        },
+        {
+            "title": "go right or straight",
+            "shape": "rectangle",
+            "color": "#46F0F0",
+            "geometry_config": {},
+            "id": 6479719,
+            "hotkey": ""
+        },
+        {
+            "title": "go straight",
+            "shape": "rectangle",
+            "color": "#911EB4",
+            "geometry_config": {},
+            "id": 6479718,
+            "hotkey": ""
+        },
+        {
+            "title": "keep left",
+            "shape": "rectangle",
+            "color": "#FABED4",
+            "geometry_config": {},
+            "id": 6479722,
+            "hotkey": ""
+        },
+        {
+            "title": "keep right",
+            "shape": "rectangle",
+            "color": "#D2F53C",
+            "geometry_config": {},
+            "id": 6479721,
+            "hotkey": ""
+        },
+        {
+            "title": "no entry",
+            "shape": "rectangle",
+            "color": "#FFD7B4",
+            "geometry_config": {},
+            "id": 6479700,
+            "hotkey": ""
+        },
+        {
+            "title": "no overtaking",
+            "shape": "rectangle",
+            "color": "#FABED4",
+            "geometry_config": {},
+            "id": 6479692,
+            "hotkey": ""
+        },
+        {
+            "title": "no overtaking (trucks)",
+            "shape": "rectangle",
+            "color": "#008080",
+            "geometry_config": {},
+            "id": 6479693,
+            "hotkey": ""
+        },
+        {
+            "title": "no traffic both ways",
+            "shape": "rectangle",
+            "color": "#AAFFC3",
+            "geometry_config": {},
+            "id": 6479698,
+            "hotkey": ""
+        },
+        {
+            "title": "no trucks",
+            "shape": "rectangle",
+            "color": "#808000",
+            "geometry_config": {},
+            "id": 6479699,
+            "hotkey": ""
+        },
+        {
+            "title": "pedestrian crossing",
+            "shape": "rectangle",
+            "color": "#AA6E28",
+            "geometry_config": {},
+            "id": 6479710,
+            "hotkey": ""
+        },
+        {
+            "title": "priority at next intersection",
+            "shape": "rectangle",
+            "color": "#DCBEFF",
+            "geometry_config": {},
+            "id": 6479694,
+            "hotkey": ""
+        },
+        {
+            "title": "priority road",
+            "shape": "rectangle",
+            "color": "#AA6E28",
+            "geometry_config": {},
+            "id": 6479695,
+            "hotkey": ""
+        },
+        {
+            "title": "restriction ends",
+            "shape": "rectangle",
+            "color": "#FFD7B4",
+            "geometry_config": {},
+            "id": 6479715,
+            "hotkey": ""
+        },
+        {
+            "title": "restriction ends 80",
+            "shape": "rectangle",
+            "color": "#46F0F0",
+            "geometry_config": {},
+            "id": 6479689,
+            "hotkey": ""
+        },
+        {
+            "title": "restriction ends (overtaking)",
+            "shape": "rectangle",
+            "color": "#DCBEFF",
+            "geometry_config": {},
+            "id": 6479724,
+            "hotkey": ""
+        },
+        {
+            "title": "restriction ends (overtaking (trucks))",
+            "shape": "rectangle",
+            "color": "#AA6E28",
+            "geometry_config": {},
+            "id": 6479725,
+            "hotkey": ""
+        },
+        {
+            "title": "road narrows",
+            "shape": "rectangle",
+            "color": "#FABED4",
+            "geometry_config": {},
+            "id": 6479707,
+            "hotkey": ""
+        },
+        {
+            "title": "roundabout",
+            "shape": "rectangle",
+            "color": "#008080",
+            "geometry_config": {},
+            "id": 6479723,
+            "hotkey": ""
+        },
+        {
+            "title": "school crossing",
+            "shape": "rectangle",
+            "color": "#FFFAC8",
+            "geometry_config": {},
+            "id": 6479711,
+            "hotkey": ""
+        },
+        {
+            "title": "slippery road",
+            "shape": "rectangle",
+            "color": "#D2F53C",
+            "geometry_config": {},
+            "id": 6479706,
+            "hotkey": ""
+        },
+        {
+            "title": "snow",
+            "shape": "rectangle",
+            "color": "#AAFFC3",
+            "geometry_config": {},
+            "id": 6479713,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 100",
+            "shape": "rectangle",
+            "color": "#F032E6",
+            "geometry_config": {},
+            "id": 6479690,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 120",
+            "shape": "rectangle",
+            "color": "#D2F53C",
+            "geometry_config": {},
+            "id": 6479691,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 20",
+            "shape": "rectangle",
+            "color": "#E6194B",
+            "geometry_config": {},
+            "id": 6479683,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 30",
+            "shape": "rectangle",
+            "color": "#3CB44B",
+            "geometry_config": {},
+            "id": 6479684,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 50",
+            "shape": "rectangle",
+            "color": "#FFE119",
+            "geometry_config": {},
+            "id": 6479685,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 60",
+            "shape": "rectangle",
+            "color": "#0082C8",
+            "geometry_config": {},
+            "id": 6479686,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 70",
+            "shape": "rectangle",
+            "color": "#F58230",
+            "geometry_config": {},
+            "id": 6479687,
+            "hotkey": ""
+        },
+        {
+            "title": "speed limit 80",
+            "shape": "rectangle",
+            "color": "#911EB4",
+            "geometry_config": {},
+            "id": 6479688,
+            "hotkey": ""
+        },
+        {
+            "title": "stop",
+            "shape": "rectangle",
+            "color": "#800000",
+            "geometry_config": {},
+            "id": 6479697,
+            "hotkey": ""
+        },
+        {
+            "title": "traffic signal",
+            "shape": "rectangle",
+            "color": "#DCBEFF",
+            "geometry_config": {},
+            "id": 6479709,
+            "hotkey": ""
+        },
+        {
+            "title": "uneven road",
+            "shape": "rectangle",
+            "color": "#F032E6",
+            "geometry_config": {},
+            "id": 6479705,
+            "hotkey": ""
+        }
+    ],
+    "tags": [
+        {
+            "name": "danger",
+            "value_type": "none",
+            "color": "#0F8A51",
+            "id": 22968,
+            "hotkey": "",
+            "applicable_type": "all",
+            "classes": []
+        },
+        {
+            "name": "mandatory",
+            "value_type": "none",
+            "color": "#0F2A8A",
+            "id": 22967,
+            "hotkey": "",
+            "applicable_type": "all",
+            "classes": []
+        },
+        {
+            "name": "other",
+            "value_type": "none",
+            "color": "#8A720F",
+            "id": 22969,
+            "hotkey": "",
+            "applicable_type": "all",
+            "classes": []
+        },
+        {
+            "name": "prohibitory",
+            "value_type": "none",
+            "color": "#0F8A2B",
+            "id": 22966,
+            "hotkey": "",
+            "applicable_type": "all",
+            "classes": []
+        }
+    ],
+    "projectType": "images"
+}
