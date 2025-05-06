@@ -16,6 +16,23 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
+
+def resize_with_padding(image, target_size=(128, 128)):
+    old_h, old_w = image.shape[:2]
+    target_w, target_h = target_size
+
+    scale = min(target_w / old_w, target_h / old_h)
+    new_w, new_h = int(old_w * scale), int(old_h * scale)
+
+    resized_image = cv2.resize(image, (new_w, new_h))
+    top = (target_h - new_h) // 2
+    bottom = target_h - new_h - top
+    left = (target_w - new_w) // 2
+    right = target_w - new_w - left
+
+    padded_image = cv2.copyMakeBorder(resized_image, top, bottom, left, right, cv2.BORDER_CONSTANT, value=0)
+    return padded_image
+
 # 이미지 전처리 함수
 def preprocess_image(image_path):
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
@@ -34,6 +51,8 @@ def detect_and_predict_tflite(weights, img_path, device='cpu', imgsz=(128, 128),
     # Load and preprocess image
     img0 = cv2.imread(img_path)  # (H, W, C) 형태로 이미지 로드
     img = cv2.resize(img0, imgsz)  # 이미지를 128x128 크기로 리사이즈 (H, W, C)
+    #img = resize_with_padding(img0, (128, 128))
+
     
     # BGR에서 RGB로 변환 (OpenCV는 기본적으로 BGR로 이미지를 읽기 때문에)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -111,8 +130,10 @@ def detect_and_predict_tflite(weights, img_path, device='cpu', imgsz=(128, 128),
 
         print(f"The predicted speed limit is: {predicted_class_label}")
         print(f"Time taken for prediction: {elapsed_time:.4f} seconds")
+        return predicted_class_label
     else:
         print("No valid bounding box found.")
+        return None
 
 # Example usage
 detect_and_predict_tflite(weights='./saved_models/128_128.pt', img_path='image1.jpg', imgsz=(128, 128), crop_save_path='cropped_result.jpg')

@@ -33,6 +33,9 @@ label_dir = "/Users/hyunoh/Documents/vscode/embedded/traffic_sign_recognition/da
 image_paths = sorted(glob(os.path.join(image_dir, "*.png")))
 correct = 0
 total = 0
+correct_log = []
+incorrect_log = []
+
 
 for img_path in image_paths:
     base = os.path.basename(img_path)
@@ -63,9 +66,26 @@ for img_path in image_paths:
 
     pred_class = int(pred_label) // 10 - 3
 
-    if pred_class == gt_class:
+    is_correct = (pred_class == gt_class)
+
+    log_entry = f"{os.path.basename(img_path)}\tGT: {gt_class}\tPred: {pred_class}\tResult: {'O' if is_correct else 'X'}"
+
+    if is_correct:
+        correct_log.append(log_entry)
         correct += 1
+    else:
+        incorrect_log.append(log_entry)
+
     total += 1
+
+
+with open("correct.txt", "w") as f:
+    f.write("\n".join(correct_log))
+
+with open("incorrect.txt", "w") as f:
+    f.write("\n".join(incorrect_log))
+
+
 
 print(f"\n총 평가 개수: {total}")
 print(f"정답 수: {correct}")
