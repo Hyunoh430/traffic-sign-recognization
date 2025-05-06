@@ -87,6 +87,3 @@ names: ['speed30', 'speed50', 'speed60']
 
 ---
 
-## 6. 발표용 요약 멘트 예시
-
-> YOLOv5는 backbone, neck, head의 3단 구조로 구성되며, pretrained weight를 이용한 전이학습을 통해 적은 양의 데이터로도 효과적인 탐지가 가능합니다. Head는 클래스 수에 맞게 조정되어, 저희만의 속도 표지판 데이터셋에도 잘 적응할 수 있었습니다.
