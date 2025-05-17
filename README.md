@@ -72,12 +72,61 @@ pip install torch torchvision opencv-python tensorflow scikit-learn
 ```
 
 ---
+---
+
+## 🧠 Full Pipeline Overview
+
+The overall process of hybrid detection is shown below:
+
+![Hybrid Detector Pipeline](images/hybrid_detector.png)
+
+> The pipeline includes grayscale preprocessing, YOLOv5 detection, bounding box mapping, and CNN classification using cropped images.
+
+---
+
+## 📈 YOLOv5 Detection Performance
+
+YOLOv5 was trained on custom grayscale images at 128x128 resolution.
+
+![YOLO Performance](images/yolo_perfor.png)
+
+> Precision: 24.38%, Recall: 21.57%, mAP@0.5: 17.34%, mAP@0.5:0.95: 8.21%
+
+---
+
+## 🔍 CNN Classification Performance
+
+The CNN classifier was applied to cropped sign images.
+
+![CNN Performance](images/cnn_perfor.png)
+
+> Accuracy: 68.33%, Precision (macro): 59.25%, Recall (macro): 67.99%, F1 Score: 61.25%
+
+---
+
+## 🧬 Custom CNN Architecture
+
+The structure of the CNN model used for sign classification:
+
+![CNN Architecture](images/custom_cnn_arch.png)
+
+---
+
+
 
 ## 🎯 Goals
 
 - Fast and lightweight speed sign recognition system for embedded devices (e.g., Raspberry Pi)
 - YOLOv5 + CNN architecture
 - Optimized input size: 128×128 grayscale
+
+---
+
+## 🚦 Future Expansion – Multi-object Detection
+
+In order to enhance real-world applicability, we began extending the detection model to include objects such as traffic lights, pedestrians, and vehicles.
+
+> YOLOv5 was reconfigured to support multiple classes, and relevant datasets were explored and partially integrated. This sets the foundation for transitioning the system from a single-task speed sign detector to a generalized road environment detector.
 
 ---
 
