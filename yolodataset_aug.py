@@ -5,9 +5,10 @@ import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
-# 증강 개수 설정
+# 증강 개수 설정 
 AUGMENT_PER_IMAGE = 3
 # YOLO 데이터셋 경로 설정
+
 # 내 실제 YOLO 데이터 경로
 BASE_PATH = r'C:\Users\2019124074\Desktop\embedded\traffic-sign-recognization\dataset\new_yolo_dataset'
 
