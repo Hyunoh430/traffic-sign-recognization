@@ -135,4 +135,4 @@ In order to enhance real-world applicability, we began extending the detection m
 - `run.py` avoids `detect.py` and gives full control over detection and post-processing
 - CNN model is trained separately using speed sign class folders
 
---수정해야할듯 아직 미완성--
+
