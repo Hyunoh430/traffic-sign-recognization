@@ -1,5 +1,6 @@
 path: /Users/hyunoh/Documents/vscode/embedded/traffic-sign-recognization/dataset/new_yolo_dataset/traffic_sign
-val: images_yolo  # 평가 이미지 폴더
+train: images
+val: images  # 평가 이미지 폴더
 names:
   0: Green
   1: Left

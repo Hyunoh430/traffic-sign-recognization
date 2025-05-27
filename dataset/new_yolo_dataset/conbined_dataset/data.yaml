@@ -1,6 +1,5 @@
-path: ./conbined_dataset
-train: images/train
-val: images/val
-
+path: /Users/hyunoh/Documents/vscode/embedded/traffic-sign-recognization/dataset/new_yolo_dataset/conbined_dataset
+train: /Users/hyunoh/Documents/vscode/embedded/traffic-sign-recognization/dataset/new_yolo_dataset/conbined_dataset/images/train
+val: /Users/hyunoh/Documents/vscode/embedded/traffic-sign-recognization/dataset/new_yolo_dataset/conbined_dataset/images/train
 nc: 5
 names: ['Green', 'Left', 'Red', 'Speed_Sign', 'Yellow']
